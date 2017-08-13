@@ -30,21 +30,3 @@ test("promise should resolve when entries have been processed", function (t) {
       t.end();
     });
 });
-
-test("promise should be rejected if there is an error in the stream", function (t) {
-  var archive = path.join(__dirname, '../testData/compressed-standard/archive.zip');
-
-  fs.createReadStream(archive)
-    .pipe(unzip.Parse())
-    .on('entry', function(entry) {
-      this.emit('error',new Error('this is an error'));
-    })
-    .promise()
-    .then(function() {
-      t.fail('This promise should be rejected');
-      t.end();
-    },function(e) {
-      t.equal(e.message,'this is an error');
-      t.end();
-    });
-});
