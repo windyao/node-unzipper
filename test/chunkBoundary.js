@@ -15,11 +15,7 @@ test("parse an archive that has a file that falls on a chunk boundary", {
     .pipe(unzip.Parse())
     .on('entry', function(entry) {
         return entry.autodrain();
-<<<<<<< HEAD
     }).on("finish", function() {
-=======
-    }).on("finish", () => {
->>>>>>> master
         t.end();
     });
 });
