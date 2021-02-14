@@ -41,7 +41,7 @@
     "request": "^2.88.0",
     "stream-buffers": ">= 0.2.5 < 1",
     "tap": ">= 0.3.0 < 1",
-    "temp": ">= 0.4.0 < 1"
+    "temp": "0.9.1"
   },
   "directories": {
     "example": "examples",
